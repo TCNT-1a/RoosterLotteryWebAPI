@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoosterLotteryWebAPI", "RoosterLotteryWebAPI\RoosterLotteryWebAPI.csproj", "{01A4EBB8-0928-4515-B312-3EDED7714D73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{5F76C71B-4ABF-42D0-82BC-4A81EDAF252C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01A4EBB8-0928-4515-B312-3EDED7714D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A4EBB8-0928-4515-B312-3EDED7714D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A4EBB8-0928-4515-B312-3EDED7714D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A4EBB8-0928-4515-B312-3EDED7714D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F76C71B-4ABF-42D0-82BC-4A81EDAF252C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F76C71B-4ABF-42D0-82BC-4A81EDAF252C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F76C71B-4ABF-42D0-82BC-4A81EDAF252C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F76C71B-4ABF-42D0-82BC-4A81EDAF252C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1816504D-1E42-4D35-A694-8BCC382FF6AB}
+	EndGlobalSection
+EndGlobal
