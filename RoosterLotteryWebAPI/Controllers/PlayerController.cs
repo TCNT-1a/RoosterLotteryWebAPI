@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using RoosterLotteryWebAPI;
 using Service.Models;
 
 using System.ComponentModel.DataAnnotations;
@@ -19,9 +20,9 @@ namespace Server.Controllers
 
         [HttpPost("findPlayer")]
 
-        public List<Player> findPlayerByPhoneNumber([FromBody]  SearchPlayer s)
+        public List<Player> findPlayerByPhoneNumber([FromBody] SearchPlayer s)
         {
-            var phoneNumber = s.phoneNumber!=null?s.phoneNumber:"";
+            var phoneNumber = s.phoneNumber != null ? s.phoneNumber : "";
 
             var phoneNumberParameter = new SqlParameter("@PhoneNumber", phoneNumber);
 
@@ -30,32 +31,52 @@ namespace Server.Controllers
                 , phoneNumberParameter).ToList();
 
             return p;
-        
+
         }
         [HttpPost("createPlayer")]
 
-        public int createPlayer([FromBody] Player p)
+        public IActionResult createPlayer([FromBody] Player p)
         {
-            Console.WriteLine(p);
 
             var fullNameParas = new SqlParameter("@FullName", p.FullName);
-            var d = String.Format("{0:dd-MM-yyyy}", p.DateOfBirth);
-            var dateOfBirthParas = new SqlParameter("@DateOfBirth", d);
+
+            var dateOfBirthParas = new SqlParameter("@DateOfBirth", p.DateOfBirth);
+
             var phoneParas = new SqlParameter("@PhoneNumber", p.PhoneNumber);
 
-             var c = _context.Players
-                .FromSqlRaw("EXEC dbo.CreatePlayer @FullName @DateOfBirth @PhoneNumber"
-                , fullNameParas, dateOfBirthParas, phoneParas).ToList();
-            Console.WriteLine(c);
-            //return p;
-            return 1;
+            var c = _context.Database
+               .ExecuteSqlRaw("EXEC dbo.CreatePlayer @FullName, @DateOfBirth, @PhoneNumber"
+               , fullNameParas, dateOfBirthParas, phoneParas);
+            return ResponseModel(c);
 
         }
+        [HttpPost("bet")]
+        public IActionResult bet([FromBody] PlayerBet b)
+        {
+            var playerId = new SqlParameter("@PlayerID", b.UserId);
+            var betNumber = new SqlParameter("@BetNumber", b.UserId);
+            var p = _context.Database
+                .ExecuteSqlRaw("EXEC dbo.CreatePlayerBet @PlayerID, @BetNumber"
+                , playerId, betNumber);
+            return ResponseModel(p);
+        }
+        IActionResult ResponseModel(int p)
+        {
+            if (p > 0) return Ok(new { message = "Success to process", status = true });
+            return BadRequest(new { message = "Fail to process", status = false });
+        }
+
     }
+
     public class SearchPlayer
     {
-        [MaxLength (15)]
-        
+        [MaxLength(15)]
+
         public string? phoneNumber { get; set; }
+    }
+    public class PlayerBet
+    {
+        public int UserId { get; set; }
+        public int BetNumber { get; set; }
     }
 }
