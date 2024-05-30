@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-
+using RoosterLotteryWebAPI.Batch;
 using Service.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +12,8 @@ IConfigurationRoot configuration = new ConfigurationBuilder()
     .AddJsonFile($"appsettings.{env}.json", optional: false)
     .Build();
 
-
+builder.Services.AddScoped<CreatingInitialBet>();
+builder.Services.AddScoped<PerformLotteryDraw>();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<RoosterLotteryContext>((options) => options.UseSqlServer(configuration.GetConnectionString("DbConnection")));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

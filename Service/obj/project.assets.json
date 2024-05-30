@@ -2018,11 +2018,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\n\\Documents\\hansae\\New folder\\RoosterLotteryWebAPI\\Service\\Service.csproj",
+      "projectUniqueName": "C:\\Users\\n\\Documents\\hansae\\RoosterLotteryWebAPI\\Service\\Service.csproj",
       "projectName": "Service",
-      "projectPath": "C:\\Users\\n\\Documents\\hansae\\New folder\\RoosterLotteryWebAPI\\Service\\Service.csproj",
+      "projectPath": "C:\\Users\\n\\Documents\\hansae\\RoosterLotteryWebAPI\\Service\\Service.csproj",
       "packagesPath": "C:\\Users\\n\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\n\\Documents\\hansae\\New folder\\RoosterLotteryWebAPI\\Service\\obj\\",
+      "outputPath": "C:\\Users\\n\\Documents\\hansae\\RoosterLotteryWebAPI\\Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\n\\AppData\\Roaming\\NuGet\\NuGet.Config",

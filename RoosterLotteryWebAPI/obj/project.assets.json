@@ -2465,11 +2465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\n\\Documents\\hansae\\New folder\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\n\\Documents\\hansae\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI.csproj",
       "projectName": "RoosterLotteryWebAPI",
-      "projectPath": "C:\\Users\\n\\Documents\\hansae\\New folder\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI.csproj",
+      "projectPath": "C:\\Users\\n\\Documents\\hansae\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI.csproj",
       "packagesPath": "C:\\Users\\n\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\n\\Documents\\hansae\\New folder\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI\\obj\\",
+      "outputPath": "C:\\Users\\n\\Documents\\hansae\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\n\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2486,8 +2486,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\n\\Documents\\hansae\\New folder\\RoosterLotteryWebAPI\\Service\\Service.csproj": {
-              "projectPath": "C:\\Users\\n\\Documents\\hansae\\New folder\\RoosterLotteryWebAPI\\Service\\Service.csproj"
+            "C:\\Users\\n\\Documents\\hansae\\RoosterLotteryWebAPI\\Service\\Service.csproj": {
+              "projectPath": "C:\\Users\\n\\Documents\\hansae\\RoosterLotteryWebAPI\\Service\\Service.csproj"
             }
           }
         }
