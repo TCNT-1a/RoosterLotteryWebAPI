@@ -7,12 +7,11 @@ namespace RoosterLotteryWebAPI.Batch
     public class CreatingInitialBet : IHostedService
     {
         private readonly ILogger<CreatingInitialBet> _logger;
-        private readonly RoosterLotteryContext _context;
+        //private readonly RoosterLotteryContext _context;
 
-        public CreatingInitialBet(ILogger<CreatingInitialBet> logger, RoosterLotteryContext context)
+        public CreatingInitialBet(ILogger<CreatingInitialBet> logger)
         {
             _logger = logger;
-            this._context = context;
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
@@ -20,11 +19,16 @@ namespace RoosterLotteryWebAPI.Batch
             while (!cancellationToken.IsCancellationRequested)
             {
                 _logger.LogInformation("Running background task...");
-                var c = _context.Database
-               .ExecuteSqlRaw("EXEC dbo.CreateInitialBet");
 
-                Console.WriteLine("doing task");
-                // Do your background task here
+                //
+                using (var _context = new RoosterLotteryContext())
+                {
+                    var c = _context.Database
+                    .ExecuteSqlRaw("EXEC dbo.CreateInitialBet");
+                    Console.WriteLine("doing task");
+                    // Do your background task here
+                }
+
 
                 await Task.Delay(TimeSpan.FromSeconds(5), cancellationToken);
             }

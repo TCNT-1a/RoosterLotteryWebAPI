@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
 namespace Service.Models
 {
@@ -9,6 +9,13 @@ namespace Service.Models
     {
         public RoosterLotteryContext()
         {
+            //var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            //IConfigurationRoot configuration = new ConfigurationBuilder()
+            //    .AddJsonFile("appsettings.json", optional: false)
+            //    .AddJsonFile($"appsettings.{env}.json", optional: false)
+            //    .Build();
+            //DbContextOptionsBuilder options = new DbContextOptionsBuilder().UseSqlServer(configuration.GetConnectionString("DbConnection"));
+            //base
         }
 
         public RoosterLotteryContext(DbContextOptions<RoosterLotteryContext> options)
