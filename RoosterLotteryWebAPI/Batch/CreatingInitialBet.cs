@@ -21,7 +21,16 @@ namespace RoosterLotteryWebAPI.Batch
                 _logger.LogInformation("Running background task...");
 
                 //
-                using (var _context = new RoosterLotteryContext())
+                var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+                IConfigurationRoot configuration = new ConfigurationBuilder()
+                    .AddJsonFile("appsettings.json", optional: false)
+                    .AddJsonFile($"appsettings.{env}.json", optional: false)
+                    .Build();
+
+                var optionsBuilder = new DbContextOptionsBuilder<RoosterLotteryContext>();
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("DbConnection"));
+
+                using (var _context = new RoosterLotteryContext(optionsBuilder.Options))
                 {
                     var c = _context.Database
                     .ExecuteSqlRaw("EXEC dbo.CreateInitialBet");

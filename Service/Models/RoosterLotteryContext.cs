@@ -9,13 +9,6 @@ namespace Service.Models
     {
         public RoosterLotteryContext()
         {
-            //var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-            //IConfigurationRoot configuration = new ConfigurationBuilder()
-            //    .AddJsonFile("appsettings.json", optional: false)
-            //    .AddJsonFile($"appsettings.{env}.json", optional: false)
-            //    .Build();
-            //DbContextOptionsBuilder options = new DbContextOptionsBuilder().UseSqlServer(configuration.GetConnectionString("DbConnection"));
-            //base
         }
 
         public RoosterLotteryContext(DbContextOptions<RoosterLotteryContext> options)
