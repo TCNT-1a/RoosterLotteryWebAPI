@@ -7,11 +7,12 @@ namespace RoosterLotteryWebAPI.Batch
     public class CreatingInitialBet : IHostedService
     {
         private readonly ILogger<CreatingInitialBet> _logger;
-        //private readonly RoosterLotteryContext _context;
+        private readonly IConfiguration _configuration;
 
-        public CreatingInitialBet(ILogger<CreatingInitialBet> logger)
+        public CreatingInitialBet(ILogger<CreatingInitialBet> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
@@ -20,15 +21,8 @@ namespace RoosterLotteryWebAPI.Batch
             {
                 _logger.LogInformation("Running background task...");
 
-                //
-                var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-                IConfigurationRoot configuration = new ConfigurationBuilder()
-                    .AddJsonFile("appsettings.json", optional: false)
-                    .AddJsonFile($"appsettings.{env}.json", optional: false)
-                    .Build();
-
                 var optionsBuilder = new DbContextOptionsBuilder<RoosterLotteryContext>();
-                optionsBuilder.UseSqlServer(configuration.GetConnectionString("DbConnection"));
+                optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DbConnection"));
 
                 using (var _context = new RoosterLotteryContext(optionsBuilder.Options))
                 {

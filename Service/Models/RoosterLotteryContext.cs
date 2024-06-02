@@ -19,6 +19,7 @@ namespace Service.Models
         public virtual DbSet<Bet> Bets { get; set; } = null!;
         public virtual DbSet<Player> Players { get; set; } = null!;
         public virtual DbSet<PlayerBet> PlayerBets { get; set; } = null!;
+        public virtual DbSet<BoardBet> BoardBets { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -13,7 +13,7 @@ namespace Service.Models
         }
 
         
-        [JsonIgnore]
+        //[JsonIgnore]
         public int Id { get; set; }
        
         public string FullName { get; set; } = null!;

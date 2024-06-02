@@ -3,8 +3,8 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using RoosterLotteryWebAPI;
 using Service.Models;
-
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
 
 namespace Server.Controllers
 {
@@ -35,7 +35,7 @@ namespace Server.Controllers
         }
         [HttpPost("createPlayer")]
 
-        public IActionResult createPlayer([FromBody] Player p)
+        public IActionResult createPlayer([FromBody] RoosterLotteryWebAPI.Controllers.CreatePlayer p)
         {
 
             var fullNameParas = new SqlParameter("@FullName", p.FullName);
@@ -54,11 +54,23 @@ namespace Server.Controllers
         public IActionResult bet([FromBody] PlayerBet b)
         {
             var playerId = new SqlParameter("@PlayerID", b.UserId);
-            var betNumber = new SqlParameter("@BetNumber", b.UserId);
+            var betNumber = new SqlParameter("@BetNumber", b.BetNumber);
             var p = _context.Database
                 .ExecuteSqlRaw("EXEC dbo.CreatePlayerBet @PlayerID, @BetNumber"
                 , playerId, betNumber);
             return ResponseModel(p);
+        }
+
+        [HttpGet("GetBoardBet")]
+        public async Task<List<BoardBet>> getPlayerBets([FromQuery]int playerId)
+        {
+            //đang có bug
+            var pId = new SqlParameter("@PlayerID", playerId);
+ 
+            var p = await _context.BoardBets
+                .FromSqlRaw<BoardBet>("EXEC dbo.GetPlayerBets @PlayerID"
+                , pId).ToListAsync();
+            return p;
         }
         IActionResult ResponseModel(int p)
         {
@@ -79,4 +91,6 @@ namespace Server.Controllers
         public int UserId { get; set; }
         public int BetNumber { get; set; }
     }
+    
+
 }
