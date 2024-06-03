@@ -1,17 +1,17 @@
 ﻿# Phần 1: Cài đặt môi trường – cách sử dụng app
-
-**Tải source code**
-
-- git clone <https://github.com/TCNTrading-lab/RoosterLottery.git>
-- git clone <https://github.com/TCNTrading-lab/RoosterLotteryWebAPI.git>
-
-## Tạo cơ sở dữ liệu
-
+## 1 Tải source code
+```shell
+ git clone https://github.com/TCNTrading-lab/RoosterLottery.git
+```
+```shell
+ git clone https://github.com/TCNTrading-lab/RoosterLotteryWebAPI.git
+```
+## 2 Tạo cơ sở dữ liệu
 Vào Project: RoosterLotteryWebAPI tải cơ sở dữ liệu
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.001.png)
 
-Và phục hồi lại với tên là RoosterLottery
+## 3 Phục hồi lại với tên là RoosterLottery
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.002.png)
 
@@ -19,21 +19,21 @@ Chú ý **connectionStrings: có thể giử nguyên nó không hoạt động**
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.003.png)
 
-## Cấu hình port server api, nếu không có thay đổi gì thì giử nguyên.
+Cấu hình port server api, nếu không có thay đổi gì thì giử nguyên.
 
-Chạy project BE
+## 4 Chạy project BE
 
-Vào địa chỉ này xem danh sách API: <http://localhost:5000/swagger/index.html>
+- Vào địa chỉ này xem danh sách API: <http://localhost:5000/swagger/index.html>
 
-Mở project RoosterLottery
+- Mở project RoosterLottery
 
-Config tại client cho biết địa chỉ API và port Sever
+## 5 Config tại client cho biết địa chỉ API và port Sever
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.005.png)
 
-Chạy client
+## Chạy client
 
-## 1 Chạy theo kịch bản là số điện thoại đã có tồn tại trong CSDL
+### * Chạy theo kịch bản là số điện thoại đã có tồn tại trong CSDL
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.006.png)
 
@@ -47,37 +47,35 @@ Bạn có thể nhập vào số từ 0 đến 9 và bấm cược, app đã có
 
 Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau khi cược thì không thể thay đổi. Sau khi cược rồi, cược nữa thì app báo lỗi.
 
-## 2 Chạy theo kịch bản SĐT không có trong CSDL
+### * Chạy theo kịch bản SĐT không có trong CSDL
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.009.png)
 
-Nhập vào sđt 0136
-
-Lúc này chức năng tạo user kích hoạt
-
-Nhập vào các thông tin user: họ và tên, ngày sinh, sau đó bấm Tạo
+- Nhập vào sđt 0136
+- Lúc này chức năng tạo user kích hoạt
+- Nhập vào các thông tin user: họ và tên, ngày sinh, sau đó bấm Tạo
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.010.png)
 
-Lúc này bạn có thể cược, khi bạn cược, bạn có thể xem con số mà các player khác cược chung ván với bạn
+- Lúc này bạn có thể cược, khi bạn cược, bạn có thể xem con số mà các player khác cược chung ván với bạn
 
-Nhập vào 1 con số và bấm cược
+- Nhập vào 1 con số và bấm cược
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.011.png)
 
-Bấm tìm để xem các player khác
+- Bấm tìm để xem các player khác
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.012.png)
 
-Cột **betID** đại diện cho ván
+- Cột **betID** đại diện cho ván
 
-**betNumber** là đại diện con số mà user cược
+- Cột **betNumber** là đại diện con số mà user cược
 
-**drawTime** là thời gian mở ván
+- Cột **drawTime** là thời gian mở ván
 
-**resultNumber** là con số hệ thống random
+- Cột **resultNumber** là con số hệ thống random
 
-Nếu mà **betNumber** bằng với **resultNumber** vào khoảng thời gian mở ván tiếp theo thì **isWinner** là true, ngược lại **isWinner** là false
+- Nếu mà **betNumber** bằng với **resultNumber** vào khoảng thời gian mở ván tiếp theo thì **isWinner** là true, ngược lại **isWinner** là false
 
 # Phần 2 KIẾN TRÚC HỆ THỐNG
 
