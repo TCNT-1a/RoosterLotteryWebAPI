@@ -141,7 +141,7 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 - Số lượng vé bán ra, số lượng người chơi trúng, tổng số người chơi, doanh thu, chi phí, số vé trung bình 1 ngày,…
 - Winrate: % người chơi trúng thưởng. % người thua
 
-# Phần 5 Một số bug vẫn còn
+# Phần 5 Một số bug (nếu còn thời gian sẻ sửa)
 - Khi nhập số âm trong khi player cược thì bị set về 0
 - Chưa validate regex số điện thoại
 
