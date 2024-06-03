@@ -1,11 +1,11 @@
-﻿#Phần 1: Cài đặt môi trường – cách sử dụng app
+﻿# Phần 1: Cài đặt môi trường – cách sử dụng app
 
 **Tải source code**
 
-*git clone <https://github.com/TCNTrading-lab/RoosterLottery.git>
-*git clone <https://github.com/TCNTrading-lab/RoosterLotteryWebAPI.git>
+- git clone <https://github.com/TCNTrading-lab/RoosterLottery.git>
+- git clone <https://github.com/TCNTrading-lab/RoosterLotteryWebAPI.git>
 
-##Tạo cơ sở dữ liệu
+## Tạo cơ sở dữ liệu
 
 Vào Project: RoosterLotteryWebAPI tải cơ sở dữ liệu
 
@@ -19,7 +19,7 @@ Chú ý **connectionStrings: có thể giử nguyên nó không hoạt động**
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.003.png)
 
-##Cấu hình port server api, nếu không có thay đổi gì thì giử nguyên.
+## Cấu hình port server api, nếu không có thay đổi gì thì giử nguyên.
 
 Chạy project BE
 
@@ -33,7 +33,7 @@ Config tại client cho biết địa chỉ API và port Sever
 
 Chạy client
 
-##1 Chạy theo kịch bản là số điện thoại đã có tồn tại trong CSDL
+## 1 Chạy theo kịch bản là số điện thoại đã có tồn tại trong CSDL
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.006.png)
 
@@ -47,7 +47,7 @@ Bạn có thể nhập vào số từ 0 đến 9 và bấm cược, app đã có
 
 Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau khi cược thì không thể thay đổi. Sau khi cược rồi, cược nữa thì app báo lỗi.
 
-##2 Chạy theo kịch bản SĐT không có trong CSDL
+## 2 Chạy theo kịch bản SĐT không có trong CSDL
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.009.png)
 
@@ -79,7 +79,7 @@ Cột **betID** đại diện cho ván
 
 Nếu mà **betNumber** bằng với **resultNumber** vào khoảng thời gian mở ván tiếp theo thì **isWinner** là true, ngược lại **isWinner** là false
 
-#Phần 2 KIẾN TRÚC HỆ THỐNG
+# Phần 2 KIẾN TRÚC HỆ THỐNG
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.013.png)
 
@@ -115,13 +115,13 @@ PLAYER
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.018.png)
 
-BET
+- BET
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.019.png)
 
 Phiên cuối cột ResultNumber thường là NULL do là phiên hiện tại chưa đến thời điểm sổ số
 
-PLAYER_BET
+-PLAYER_BET
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.020.png)
 
@@ -129,18 +129,18 @@ Cột BetNumber là cột mà player cược.
 
 Nếu cột isWinner là NULL là chưa tới phiên kiểm tra thắng thua, còn cột isWinner là 1 là thắng, 0 là thua.
 
-#Phần 3 TRIỂN KHAI MONITORING
+# Phần 3 TRIỂN KHAI MONITORING
 
-##**Metric 1**: Dùng để đánh giá hành vi người chơi, và thói quen người chơi, đánh giá được ứng dụng đang phát triển, hay suy giảm qua từng tuần, tháng , từ đó có được chiến lượt thay đổi.
+## **Metric 1**: Dùng để đánh giá hành vi người chơi, và thói quen người chơi, đánh giá được ứng dụng đang phát triển, hay suy giảm qua từng tuần, tháng , từ đó có được chiến lượt thay đổi.
 
 - Số lượng người cược mổi ngày, số lượng trung bình của tháng, lượng vào cuối tuần
 - Thống kê độ tuổi người chơi, người chơi đa số ở độ tuổi nào
 
-##**Metric 2**: có thể tùy chỉnh sức mạnh phần cứng vào những khoảng thời gian khác nhau tối ưu hạ tầng động theo thời gian. Có thể giảm chi phí thuê cloud hoặc điện năng vận hành,…
+## **Metric 2**: có thể tùy chỉnh sức mạnh phần cứng vào những khoảng thời gian khác nhau tối ưu hạ tầng động theo thời gian. Có thể giảm chi phí thuê cloud hoặc điện năng vận hành,…
 
 - Khoảng thời gian nào thì có lượng user cao nhất, khoảng thời gian nào có lượng user thấp nhất, xem mức tải hệ thống.
 
-##**Metric 2**: Tài chính
+## **Metric 2**: Tài chính
 
 - Số lượng vé bán ra, số lượng người chơi trúng, tổng số người chơi, doanh thu, chi phí, số vé trung bình 1 ngày,…
 - Winrate: % người chơi trúng thưởng. % người thua
