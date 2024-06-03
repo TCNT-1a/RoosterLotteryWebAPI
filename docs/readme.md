@@ -17,7 +17,7 @@ Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a
 
 Chú ý **connectionStrings: có thể giử nguyên nó không hoạt động**, do là thông số **Server = .\\SQLEXPRESS** có thể có giá trị khác nhau ở những máy tính khác nhau, tuỳ vào người cài đặt ban đầu. Cần điều chỉnh cho thích hợp.
 
-![](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.003.png)
+![alt]](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.003.png)
 
 Cấu hình port server api, nếu không có thay đổi gì thì giử nguyên.
 
@@ -27,33 +27,21 @@ Vào địa chỉ này xem danh sách API: <http://localhost:5000/swagger/index.
 
 Mở project RoosterLottery
 
-![A screenshot of a computer program
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.004.png)
-
 Config tại client cho biết địa chỉ API và port Sever
 
-![A screen shot of a computer program
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.005.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.005.png)
 
 Chạy client
 
 \1) Chạy theo kịch bản là số điện thoại đã có tồn tại trong CSDL
 
-![A screenshot of a computer
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.006.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.006.png)
 
 Nhập vào một số điện thoại có tồn tại (0123->0135)
 
-![A screenshot of a computer
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.007.png)
 
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.007.png)
-
-![A screenshot of a computer
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.008.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.008.png)
 
 Bạn có thể nhập vào số từ 0 đến 9 và bấm cược, app đã có validate giá trị cược từ 0 đến 9, nếu nhập số ngoài khoảng này thì app thông báo không cho cược.
 
@@ -61,9 +49,7 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 
 \2) Chạy theo kịch bản SĐT không có trong CSDL
 
-![A screenshot of a computer
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.009.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.009.png)
 
 Nhập vào sđt 0136
 
@@ -71,23 +57,17 @@ Lúc này chức năng tạo user kích hoạt
 
 Nhập vào các thông tin user: họ và tên, ngày sinh, sau đó bấm Tạo
 
-![A screenshot of a computer
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.010.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.010.png)
 
 Lúc này bạn có thể cược, khi bạn cược, bạn có thể xem con số mà các player khác cược chung ván với bạn
 
 Nhập vào 1 con số và bấm cược
 
-![A screenshot of a computer
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.011.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.011.png)
 
 Bấm tìm để xem các player khác
 
-![A screenshot of a computer
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.012.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.012.png)
 
 Cột **betID** đại diện cho ván
 
@@ -101,13 +81,9 @@ Nếu mà **betNumber** bằng với **resultNumber** vào khoảng thời gian 
 
 **Phần 2 KIẾN TRÚC HỆ THỐNG**
 
-![A screenshot of a computer
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.013.png)
 
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.013.png)
-
-![A screenshot of a computer program
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.014.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.014.png)
 
 Vì 1 ván cược kéo dài 1 giờ nên khó khăn trong việc test
 
@@ -117,17 +93,13 @@ CRON schedule là một chuổi dùng để cấu hình các tác vụ thực hi
 
 Store Procedure: **CreateInitialBet, PerformLotteryDraw, UpdatePlayerBetIsWinner** Được chạy ngầm theo CRON schedule
 
-![A screenshot of a computer program
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.015.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.015.png)
 
 Bạn có thể sửa CRON.H thành CRON.M để giảm thời gian test app.
 
 Các Procedure còn lại được sử dụng để xữ lý nghiệp vụ ở API SERVER
 
-![A group of blue and green lines
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.016.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.016.png)
 
 Các API theo thứ tự từ trên xuống dưới có công dụng:
 
@@ -138,21 +110,16 @@ Các API theo thứ tự từ trên xuống dưới có công dụng:
 
 Về phần table để dùng để lưu trử thông tin
 
-![A screenshot of a computer
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.017.png)
-
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.017.png)
 PLAYER
 
-![A screenshot of a computer
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.018.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.018.png)
 
 BET
 
 ![A screenshot of a computer
 
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.019.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.019.png)
 
 Phiên cuối cột ResultNumber thường là NULL do là phiên hiện tại chưa đến thời điểm sổ số
 
@@ -160,7 +127,7 @@ PLAYER_BET
 
 ![A screenshot of a computer screen
 
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.020.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.020.png)
 
 Cột BetNumber là cột mà player cược.
 
