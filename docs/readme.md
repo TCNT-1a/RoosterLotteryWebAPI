@@ -9,13 +9,9 @@ Tạo cơ sở dữ liệu
 
 Vào Project: RoosterLotteryWebAPI tải cơ sở dữ liệu
 
-![A screenshot of a phone
-
-Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.001.png)
+![](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.001.png)
 
 Và phục hồi lại với tên là RoosterLottery
-
-![A screenshot of a computer program
 
 Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.002.png)
 
@@ -103,7 +99,6 @@ Cột **betID** đại diện cho ván
 
 Nếu mà **betNumber** bằng với **resultNumber** vào khoảng thời gian mở ván tiếp theo thì **isWinner** là true, ngược lại **isWinner** là false
 
-
 **Phần 2 KIẾN TRÚC HỆ THỐNG**
 
 ![A screenshot of a computer
@@ -116,7 +111,7 @@ Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a
 
 Vì 1 ván cược kéo dài 1 giờ nên khó khăn trong việc test
 
-Nên có thể vào function Fn\_CaculateNextTime, thay đổi giá trị @NextTime = @NextMinute
+Nên có thể vào function Fn_CaculateNextTime, thay đổi giá trị @NextTime = @NextMinute
 
 CRON schedule là một chuổi dùng để cấu hình các tác vụ thực hiện có tính chất lặp đi lặp lại. Khái niệm này có ở nhiều ngôn ngữ lập trình.
 
@@ -161,7 +156,7 @@ Description automatically generated](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a
 
 Phiên cuối cột ResultNumber thường là NULL do là phiên hiện tại chưa đến thời điểm sổ số
 
-PLAYER\_BET
+PLAYER_BET
 
 ![A screenshot of a computer screen
 
@@ -175,21 +170,14 @@ Nếu cột isWinner là NULL là chưa tới phiên kiểm tra thắng thua, c�
 
 **Metric 1**: Dùng để đánh giá hành vi người chơi, và thói quen người chơi, đánh giá được ứng dụng đang phát triển, hay suy giảm qua từng tuần, tháng , từ đó có được chiến lượt thay đổi.
 
-- Số lượng người cược mổi ngày, số lượng trung bình  của tháng, lượng vào cuối tuần 
+- Số lượng người cược mổi ngày, số lượng trung bình của tháng, lượng vào cuối tuần
 - Thống kê độ tuổi người chơi, người chơi đa số ở độ tuổi nào
 
 **Metric 2**: có thể tùy chỉnh sức mạnh phần cứng vào những khoảng thời gian khác nhau tối ưu hạ tầng động theo thời gian. Có thể giảm chi phí thuê cloud hoặc điện năng vận hành,…
 
-- Khoảng thời gian nào thì có lượng user cao nhất, khoảng thời gian nào có  lượng user thấp nhất, xem mức tải hệ thống.
+- Khoảng thời gian nào thì có lượng user cao nhất, khoảng thời gian nào có lượng user thấp nhất, xem mức tải hệ thống.
 
 **Metric 2**: Tài chính
 
 - Số lượng vé bán ra, số lượng người chơi trúng, tổng số người chơi, doanh thu, chi phí, số vé trung bình 1 ngày,…
 - Winrate: % người chơi trúng thưởng. % người thua
-
-
-
-
-
-
-
