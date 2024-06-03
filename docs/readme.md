@@ -9,7 +9,7 @@ Tạo cơ sở dữ liệu
 
 Vào Project: RoosterLotteryWebAPI tải cơ sở dữ liệu
 
-![](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.001.png)
+![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.001.png)
 
 Và phục hồi lại với tên là RoosterLottery
 
