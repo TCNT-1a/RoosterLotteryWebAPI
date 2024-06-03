@@ -64,12 +64,11 @@ namespace Server.Controllers
         [HttpGet("GetBoardBet")]
         public async Task<List<BoardBet>> getPlayerBets([FromQuery]int playerId)
         {
-            //đang có bug
             var pId = new SqlParameter("@PlayerID", playerId);
  
-            var p = await _context.BoardBets
-                .FromSqlRaw<BoardBet>("EXEC dbo.GetPlayerBets @PlayerID"
-                , pId).ToListAsync();
+            var p =  _context.BoardBets
+                .FromSqlRaw("EXEC dbo.GetPlayerBets @PlayerID"
+                , pId).ToList();
             return p;
         }
         IActionResult ResponseModel(int p)

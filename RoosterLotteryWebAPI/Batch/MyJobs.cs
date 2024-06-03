@@ -23,13 +23,16 @@ namespace RoosterLotteryWebAPI.Batch
             using (var _context = new RoosterLotteryContext(optionsBuilder.Options))
             {
 
-                var c = _context.Database
+                var c1 = _context.Database
                .ExecuteSqlRaw("EXEC dbo.PerformLotteryDraw");
 
-                var c1 = _context.Database
+                var c2 = _context.Database
+                .ExecuteSqlRaw("EXEC dbo.UpdatePlayerBetIsWinner");
+
+                var c3 = _context.Database
                 .ExecuteSqlRaw("EXEC dbo.CreateInitialBet");
-                _logger.LogInformation("Running background task......................................");
-                
+               
+                _logger.LogInformation($"[{DateTime.Now}]   Running background task......................................");
                 // Do your background task here
             }
 

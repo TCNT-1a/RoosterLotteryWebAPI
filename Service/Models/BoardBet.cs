@@ -9,7 +9,7 @@ namespace Service.Models
     public class BoardBet
     {
 
-        public int Id { get; set; }
+        public int? PLAYER_ID { get; set; }
         public string FullName { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string PhoneNumber { get; set; }
@@ -17,6 +17,7 @@ namespace Service.Models
         public DateTime? DrawTime { get; set; }
         public int? BetNumber { get; set; }
         public int? ResultNumber { get; set; }
-        public int? IsWinner { get; set; }
+        public bool? IsWinner { get; set; }
+        public int ID { get; set; }
     }
 }

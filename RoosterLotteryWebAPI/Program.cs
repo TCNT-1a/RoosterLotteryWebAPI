@@ -2,7 +2,6 @@
 using RoosterLotteryWebAPI.Batch;
 using Service.Models;
 using Quartz;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,7 +31,7 @@ builder.Services.AddQuartz(q =>
     var CRON = new
     {
         //Repeat every at begin hour
-        H = "0 * * * *",
+        H = "0 0 * * * ? *",
         //Repeat every at begin minute
         M = "0 0/1 * 1/1 * ? *",
     };
@@ -40,14 +39,17 @@ builder.Services.AddQuartz(q =>
 
     q.ScheduleJob<MyJob>(trigger => trigger
         .WithIdentity("my-job-trigger", "default")
-        .WithCronSchedule(CRON.M)
+        .WithCronSchedule(CRON.H)
     );
 });
 
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.WebHost.UseUrls("http://localhost:5000");
+string Host = configuration.GetValue("Host","localhost");
+string Port = configuration.GetValue("Port","5000");
+string baseAddress = $"http://{Host}:{Port}";
+builder.WebHost.UseUrls(baseAddress);
 
 var app = builder.Build();
 
