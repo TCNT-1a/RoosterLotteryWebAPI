@@ -1,4 +1,4 @@
-﻿# Phần 1: Cài đặt môi trường – cách sử dụng app
+﻿# Phần 1: Cài đặt môi trường
 ## 1 Tải source code
 ```shell
  git clone https://github.com/TCNTrading-lab/RoosterLottery.git
@@ -21,19 +21,18 @@ Chú ý **connectionStrings: có thể giử nguyên nó không hoạt động**
 
 Cấu hình port server api, nếu không có thay đổi gì thì giử nguyên.
 
-## 4 Chạy project BE
+## 4 Khởi động Backend
 
 - Vào địa chỉ này xem danh sách API: <http://localhost:5000/swagger/index.html>
 
 - Mở project RoosterLottery
 
-## 5 Config tại client cho biết địa chỉ API và port Sever
+## 5 Config tại client cho biết địa chỉ API và port Sever sau đó khởi động phía **Client**
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.005.png)
 
-## Chạy client
-
-### * Chạy theo kịch bản là số điện thoại đã có tồn tại trong CSDL
+# Phần 2: Hướng dẫn sử dụng
+## 1 Chạy theo kịch bản số điện thoại đã có tồn tại trong CSDL
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.006.png)
 
@@ -47,7 +46,7 @@ Bạn có thể nhập vào số từ 0 đến 9 và bấm cược, app đã có
 
 Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau khi cược thì không thể thay đổi. Sau khi cược rồi, cược nữa thì app báo lỗi.
 
-### * Chạy theo kịch bản SĐT không có trong CSDL
+## 2 Chạy theo kịch bản SĐT không có trong CSDL
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.009.png)
 
@@ -77,39 +76,37 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 
 - Nếu mà **betNumber** bằng với **resultNumber** vào khoảng thời gian mở ván tiếp theo thì **isWinner** là true, ngược lại **isWinner** là false
 
-# Phần 2 KIẾN TRÚC HỆ THỐNG
+# Phần 3 KIẾN TRÚC HỆ THỐNG
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.013.png)
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.014.png)
 
-Vì 1 ván cược kéo dài 1 giờ nên khó khăn trong việc test
+- Vì 1 ván cược kéo dài 1 giờ nên khó khăn trong việc test, nên có thể vào function **Fn_CaculateNextTime**, thay đổi giá trị **@NextTime = @NextMinute**
 
-Nên có thể vào function Fn_CaculateNextTime, thay đổi giá trị @NextTime = @NextMinute
+- **CRON schedule** là một chuổi dùng để cấu hình các tác vụ thực hiện có tính chất lặp đi lặp lại. Khái niệm này có ở nhiều ngôn ngữ lập trình.
 
-CRON schedule là một chuổi dùng để cấu hình các tác vụ thực hiện có tính chất lặp đi lặp lại. Khái niệm này có ở nhiều ngôn ngữ lập trình.
-
-Store Procedure: **CreateInitialBet, PerformLotteryDraw, UpdatePlayerBetIsWinner** Được chạy ngầm theo CRON schedule
+- Store Procedure: **CreateInitialBet, PerformLotteryDraw, UpdatePlayerBetIsWinner** Được chạy ngầm theo CRON schedule
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.015.png)
 
-Bạn có thể sửa CRON.H thành CRON.M để giảm thời gian test app.
+- Bạn có thể sửa **CRON.H** thành **CRON.M** để giảm thời gian test app.
 
-Các Procedure còn lại được sử dụng để xữ lý nghiệp vụ ở API SERVER
+### Các Procedure còn lại được sử dụng để xữ lý nghiệp vụ ở API SERVER
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.016.png)
 
-Các API theo thứ tự từ trên xuống dưới có công dụng:
+### Các API theo thứ tự từ trên xuống dưới có công dụng:
 
 - Tìm Người chơi dựa theo SĐT
 - Tạo Người chơi
 - Cho phép người chơi cá cược
 - Lấy thông tin các người chơi khác cược chung ván với mình.
 
-Về phần table để dùng để lưu trử thông tin
+### Về phần table để dùng để lưu trử thông tin
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.017.png)
-PLAYER
+- PLAYER
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.018.png)
 
@@ -117,17 +114,17 @@ PLAYER
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.019.png)
 
-Phiên cuối cột ResultNumber thường là NULL do là phiên hiện tại chưa đến thời điểm sổ số
+- Phiên cuối cột ResultNumber thường là NULL do là phiên hiện tại chưa đến thời điểm sổ số
 
 -PLAYER_BET
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.020.png)
 
-Cột BetNumber là cột mà player cược.
+- Cột **BetNumber** là cột mà player cược.
 
-Nếu cột isWinner là NULL là chưa tới phiên kiểm tra thắng thua, còn cột isWinner là 1 là thắng, 0 là thua.
+- Nếu cột **isWinner** là NULL là chưa tới phiên kiểm tra thắng thua, còn cột **isWinner** là 1 là thắng, 0 là thua.
 
-# Phần 3 TRIỂN KHAI MONITORING
+# Phần 4 TRIỂN KHAI MONITORING
 
 ## **Metric 1**: Dùng để đánh giá hành vi người chơi, và thói quen người chơi, đánh giá được ứng dụng đang phát triển, hay suy giảm qua từng tuần, tháng , từ đó có được chiến lượt thay đổi.
 
