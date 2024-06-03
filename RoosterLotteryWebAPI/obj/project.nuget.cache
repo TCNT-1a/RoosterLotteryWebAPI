@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Y/4yqPfLmyOe9w99sbI+l5HXc7DKA5IJ5hN219E1QMbKfbLr7s9+4nRq8JMPHsC2HvjG9kB9W4VWR85FLTgXug==",
+  "dgSpecHash": "SloG+nLksao=",
   "success": true,
   "projectFilePath": "C:\\Users\\n\\Documents\\hansae\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI.csproj",
   "expectedPackageFiles": [
@@ -55,7 +55,11 @@
     "C:\\Users\\n\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
     "C:\\Users\\n\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\n\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
-    "C:\\Users\\n\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\n\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\n\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.30\\microsoft.netcore.app.ref.6.0.30.nupkg.sha512",
+    "C:\\Users\\n\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.30\\microsoft.windowsdesktop.app.ref.6.0.30.nupkg.sha512",
+    "C:\\Users\\n\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.30\\microsoft.aspnetcore.app.ref.6.0.30.nupkg.sha512",
+    "C:\\Users\\n\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.30\\microsoft.netcore.app.host.win-x64.6.0.30.nupkg.sha512"
   ],
   "logs": []
 }

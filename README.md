@@ -43,7 +43,7 @@ Description automatically generated](data:image/png;base64,iVBORw0KGgoAAAANSUhEU
 
 Chạy client
 
-1) Chạy theo kịch bản là số điện thoại đã có tồn tại trong CSDL
+1. Chạy theo kịch bản là số điện thoại đã có tồn tại trong CSDL
 
 ![A screenshot of a computer
 
@@ -63,7 +63,7 @@ Bạn có thể nhập vào số từ 0 đến 9 và bấm cược, app đã có
 
 Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau khi cược thì không thể thay đổi. Sau khi cược rồi, cược nữa thì app báo lỗi.
 
-2) Chạy theo kịch bản SĐT không có trong CSDL
+2. Chạy theo kịch bản SĐT không có trong CSDL
 
 ![A screenshot of a computer
 
