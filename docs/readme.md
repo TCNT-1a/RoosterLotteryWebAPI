@@ -6,33 +6,34 @@
 ```shell
  git clone https://github.com/TCNTrading-lab/RoosterLotteryWebAPI.git
 ```
-## 2 Tạo cơ sở dữ liệu
-Vào Project: RoosterLotteryWebAPI tải cơ sở dữ liệu
+## 2 Tạo cơ sở dữ liệu - Phục hồi lại với tên là RoosterLottery
+Vào Project: RoosterLotteryWebAPI tạo cơ sở dữ liệu
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.001.png)
 
-## 3 Phục hồi lại với tên là RoosterLottery
+## 3 Cấu hình backend
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.002.png)
 
-Chú ý **connectionStrings: có thể giử nguyên nó không hoạt động**, do là thông số **Server = .\\SQLEXPRESS** có thể có giá trị khác nhau ở những máy tính khác nhau, tuỳ vào người cài đặt ban đầu. Cần điều chỉnh cho thích hợp.
+- **Port** backend, nếu không có thay đổi gì thì giử nguyên.
+- Chú ý **connectionStrings: có thể giử nguyên nó không hoạt động**, do là thông số **Server = .\\SQLEXPRESS** có thể có giá trị khác nhau ở những máy tính khác nhau, tuỳ vào người cài đặt ban đầu. Cần điều chỉnh cho thích hợp.
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.003.png)
 
-Cấu hình port server api, nếu không có thay đổi gì thì giử nguyên.
+
 
 ## 4 Khởi động Backend
 
 - Vào địa chỉ này xem danh sách API: <http://localhost:5000/swagger/index.html>
 
-- Mở project RoosterLottery
-
-## 5 Config tại client cho biết địa chỉ API và port Sever sau đó khởi động phía **Client**
+## 5 Mở project RoosterLottery 
+- Config tại client cho biết địa chỉ API 
+- Port Sever 
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.005.png)
-
+- Sau đó khởi động phía **Project**
 # Phần 2: Hướng dẫn sử dụng
-## 1 Chạy theo kịch bản số điện thoại đã có tồn tại trong CSDL
+## 1 Player đã có tồn tại trong CSDL
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.006.png)
 
@@ -46,7 +47,7 @@ Bạn có thể nhập vào số từ 0 đến 9 và bấm cược, app đã có
 
 Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau khi cược thì không thể thay đổi. Sau khi cược rồi, cược nữa thì app báo lỗi.
 
-## 2 Chạy theo kịch bản SĐT không có trong CSDL
+## 2 Player không có trong CSDL
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.009.png)
 
@@ -139,3 +140,8 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 
 - Số lượng vé bán ra, số lượng người chơi trúng, tổng số người chơi, doanh thu, chi phí, số vé trung bình 1 ngày,…
 - Winrate: % người chơi trúng thưởng. % người thua
+
+# Phần 5 Một số bug vẫn còn
+- Khi nhập số âm trong khi player cược thì bị set về 0
+- Chưa validate regex số điện thoại
+
