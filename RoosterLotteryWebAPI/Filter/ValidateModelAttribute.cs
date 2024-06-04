@@ -3,7 +3,6 @@ using System.Runtime.Serialization;
 
 namespace RoosterLotteryWebAPI.Filter
 {
-
     public class ModelValidationException : ArgumentException
     {
         public IEnumerable<object> Errors { get; }

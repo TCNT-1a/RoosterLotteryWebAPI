@@ -53,9 +53,6 @@
                     Message = "Internal Server Error."
                 };
             }
-
-
-
             return context.Response.WriteAsync(System.Text.Json.JsonSerializer.Serialize(result));
         }
     }
