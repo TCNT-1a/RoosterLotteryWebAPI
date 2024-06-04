@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FxZQt3NPtTQ=",
+  "dgSpecHash": "qz8/Xb1raJgzNyCIlje2pL8VvMf4vADJzRlEZRX7nZcoDczmoMsNUz24vH+yeHPXRCt2Zy8cDWXZQcTFyAiWPA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\n\\Documents\\hansae\\RoosterLotteryWebAPI\\Service\\Service.csproj",
+  "projectFilePath": "C:\\Users\\n\\Documents\\cty vacxin\\RoosterLotteryWebAPI\\Service\\Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\n\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\n\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -47,10 +47,7 @@
     "C:\\Users\\n\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\n\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\n\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
-    "C:\\Users\\n\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\n\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.30\\microsoft.netcore.app.ref.6.0.30.nupkg.sha512",
-    "C:\\Users\\n\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.30\\microsoft.windowsdesktop.app.ref.6.0.30.nupkg.sha512",
-    "C:\\Users\\n\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.30\\microsoft.aspnetcore.app.ref.6.0.30.nupkg.sha512"
+    "C:\\Users\\n\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

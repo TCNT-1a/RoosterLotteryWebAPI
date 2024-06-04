@@ -2,6 +2,7 @@
 using RoosterLotteryWebAPI.Batch;
 using Service.Models;
 using Quartz;
+using RoosterLotteryWebAPI.Exception;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -68,6 +69,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.MapControllers();
 

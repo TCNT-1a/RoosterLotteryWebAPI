@@ -26,3 +26,17 @@ C:\Users\n\Documents\hansae\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\refint
 C:\Users\n\Documents\hansae\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\Service.pdb
 C:\Users\n\Documents\hansae\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\Service.genruntimeconfig.cache
 C:\Users\n\Documents\hansae\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\ref\Service.dll
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\bin\Debug\net6.0\Service.deps.json
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\bin\Debug\net6.0\Service.runtimeconfig.json
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\bin\Debug\net6.0\Service.dll
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\bin\Debug\net6.0\Service.pdb
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\Service.dll
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\refint\Service.dll
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\Service.pdb
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\Service.genruntimeconfig.cache
+C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\Service\obj\Debug\net6.0\ref\Service.dll

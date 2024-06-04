@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using RoosterLotteryWebAPI;
+using RoosterLotteryWebAPI.Controllers.RequestModel;
 using Service.Models;
-using System.ComponentModel.DataAnnotations;
-using System.Security.Cryptography;
+
 
 namespace Server.Controllers
 {
@@ -35,7 +34,7 @@ namespace Server.Controllers
         }
         [HttpPost("createPlayer")]
 
-        public IActionResult createPlayer([FromBody] RoosterLotteryWebAPI.Controllers.CreatePlayer p)
+        public IActionResult createPlayer([FromBody] CreatePlayer p)
         {
 
             var fullNameParas = new SqlParameter("@FullName", p.FullName);
@@ -51,7 +50,7 @@ namespace Server.Controllers
 
         }
         [HttpPost("bet")]
-        public IActionResult bet([FromBody] PlayerBet b)
+        public IActionResult bet([FromBody] CreatePlayerBet b)
         {
             var playerId = new SqlParameter("@PlayerID", b.UserId);
             var betNumber = new SqlParameter("@BetNumber", b.BetNumber);
@@ -79,17 +78,7 @@ namespace Server.Controllers
 
     }
 
-    public class SearchPlayer
-    {
-        [MaxLength(15)]
-
-        public string? phoneNumber { get; set; }
-    }
-    public class PlayerBet
-    {
-        public int UserId { get; set; }
-        public int BetNumber { get; set; }
-    }
+    
     
 
 }
