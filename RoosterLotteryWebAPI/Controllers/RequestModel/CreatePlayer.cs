@@ -18,8 +18,8 @@ namespace RoosterLotteryWebAPI.Controllers.RequestModel
         public DateTime DateOfBirth { get; set; }
 
         [Required(ErrorMessage = "Phone number is required")]
-        //[Phone(ErrorMessage = "Invalid phone number format")]
-        [PhoneNumber]
+        [Phone(ErrorMessage = "Invalid phone number format")]
+        //[PhoneNumber]
         public string? PhoneNumber { get; set; }
     }
  

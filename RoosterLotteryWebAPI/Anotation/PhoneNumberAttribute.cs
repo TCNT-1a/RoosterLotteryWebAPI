@@ -14,7 +14,7 @@ namespace RoosterLotteryWebAPI.Anotation
                 return new ValidationResult("Phone number is required.");
             }
 
-            var regex = new Regex(@"^\+?[1-9]\d{1,14}$");
+            var regex = new Regex(@"^\+?[0-9]\d{1,14}$");
             if (!regex.IsMatch(phoneNumber))
             {
                 return new ValidationResult("Invalid phone number format.");
