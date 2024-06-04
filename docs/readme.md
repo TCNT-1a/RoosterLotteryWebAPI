@@ -6,10 +6,10 @@
 ```shell
  git clone https://github.com/TCNTrading-lab/RoosterLotteryWebAPI.git
 ```
-## 2 Tạo cơ sở dữ liệu - Phục hồi lại với tên là RoosterLottery
+## 2 Tạo cơ sở dữ liệu 
 - Vào Project: RoosterLotteryWebAPI
 - Tạo cơ sở dữ liệu
-
+- Phục hồi lại với tên là RoosterLottery
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.001.png)
 
 ## 3 Cấu hình backend
