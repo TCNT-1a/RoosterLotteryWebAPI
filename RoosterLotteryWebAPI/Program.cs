@@ -3,6 +3,12 @@ using RoosterLotteryWebAPI.Batch;
 using Service.Models;
 using Quartz;
 using RoosterLotteryWebAPI.Exception;
+//using Microsoft.AspNetCore.Builder;
+//using static System.Net.Mime.MediaTypeNames;
+using Microsoft.AspNetCore.Diagnostics;
+using Newtonsoft.Json;
+using RoosterLotteryWebAPI.Filter;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,8 +27,12 @@ if (connectionString == null)
 {
     throw new InvalidOperationException("DbConnection connection string is missing");
 }
-
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
 builder.Services.AddControllers();
+builder.Services.AddScoped<ValidateModelAttribute>();
 
 builder.Services.AddDbContext<RoosterLotteryContext>((options) => options.UseSqlServer(connectionString));
 builder.Services.AddQuartz(q =>
@@ -53,7 +63,8 @@ string baseAddress = $"http://{Host}:{Port}";
 builder.WebHost.UseUrls(baseAddress);
 
 var app = builder.Build();
-
+app.UseMiddleware<ExceptionMiddleware>();
+app.UseRouting();
 using (var scope = app.Services.CreateScope())
 {
     var schedulerFactory = scope.ServiceProvider.GetRequiredService<ISchedulerFactory>();
@@ -61,16 +72,15 @@ using (var scope = app.Services.CreateScope())
     scheduler.Start().Wait();
 }
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseAuthorization();
-app.UseMiddleware<ExceptionMiddleware>();
 
+app.UseAuthorization();
 app.MapControllers();
+
 
 app.Run();

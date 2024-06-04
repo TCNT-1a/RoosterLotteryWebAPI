@@ -2,6 +2,7 @@
 {
     using Microsoft.AspNetCore.Http;
     using Microsoft.Extensions.Logging;
+    using RoosterLotteryWebAPI.Filter;
     using System;
     using System.Net;
     using System.Threading.Tasks;
@@ -23,25 +24,35 @@
             {
                 await _next(httpContext);
             }
-            catch (Exception ex)
+            catch (Exception? ex)
             {
                 _logger.LogError($"Something went wrong: {ex}");
                 await HandleExceptionAsync(httpContext, ex);
             }
         }
 
-        private Task HandleExceptionAsync(HttpContext context, Exception exception)
+        private Task HandleExceptionAsync(HttpContext context, Exception ex)
         {
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-
-            var result = new
+            object result;
+            if (ex is ModelValidationException mvE)
             {
-                StatusCode = context.Response.StatusCode,
-                Message = "Internal Server Error from the custom middleware.",
-                Detailed = exception.Message
-            };
-
+                result = new
+                {
+                    StatusCode = context.Response.StatusCode,
+                    Message = "Model validation failed.",
+                    Detailed = mvE.Errors
+                };
+            }
+            else
+            {
+                result = new
+                {
+                    StatusCode = context.Response.StatusCode,
+                    Message = "Internal Server Error."
+                };
+            }
             return context.Response.WriteAsync(System.Text.Json.JsonSerializer.Serialize(result));
         }
     }

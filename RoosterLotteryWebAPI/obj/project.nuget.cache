@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Cn7jseLdYGnW0cHq1kmhblWOeYuuuiqP5JEJruztDpl1NMaj0R3ZZYs7LoibUc56T9vf0n0kxLms37csPwX2gg==",
+  "dgSpecHash": "A3cw9AfD8q6dRp4l06WnPtSAdmQTKreyc/p1FkpBjVfwSbcZVzMCpUyi4g5wArODZRGKapAwLA0HMaPrt4kDpg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\n\\Documents\\cty vacxin\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI.csproj",
+  "projectFilePath": "C:\\Users\\n\\Documents\\hansae\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI\\RoosterLotteryWebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\n\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\n\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -36,6 +36,7 @@
     "C:\\Users\\n\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\n\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\n\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\n\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\n\\.nuget\\packages\\quartz\\3.9.0\\quartz.3.9.0.nupkg.sha512",
     "C:\\Users\\n\\.nuget\\packages\\quartz.extensions.dependencyinjection\\3.9.0\\quartz.extensions.dependencyinjection.3.9.0.nupkg.sha512",
     "C:\\Users\\n\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
