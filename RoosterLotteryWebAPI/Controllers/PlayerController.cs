@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using RoosterLotteryWebAPI.Controllers.RequestModel;
+using RoosterLotteryWebAPI.Filter;
 using Service.Models;
 
 
@@ -28,17 +29,14 @@ namespace Server.Controllers
             return p;
         }
         [HttpPost("create")]
-
+        [ServiceFilter(typeof(ValidateModelAttribute))]
         public IActionResult CreatePlayer([FromBody] CreatePlayer p)
         {
             if (ModelState.IsValid)
             {
                 var fullNameParas = new SqlParameter("@FullName", p.FullName);
-
                 var dateOfBirthParas = new SqlParameter("@DateOfBirth", p.DateOfBirth);
-
                 var phoneParas = new SqlParameter("@PhoneNumber", p.PhoneNumber);
-
                 var c = _context.Database
                    .ExecuteSqlRaw("EXEC dbo.CreatePlayer @FullName, @DateOfBirth, @PhoneNumber"
                    , fullNameParas, dateOfBirthParas, phoneParas);
@@ -64,10 +62,10 @@ namespace Server.Controllers
         }
 
         [HttpGet("get-board-bets")]
-        public  List<BoardBet> GetBoardBets([FromQuery]int playerId)
+        public List<BoardBet> GetBoardBets([FromQuery] int playerId)
         {
             var pId = new SqlParameter("@PlayerID", playerId);
-            var p =  _context.BoardBets
+            var p = _context.BoardBets
                 .FromSqlRaw("EXEC dbo.GetPlayerBets @PlayerID"
                 , pId).ToList();
             return p;
@@ -80,7 +78,7 @@ namespace Server.Controllers
 
     }
 
-    
-    
+
+
 
 }

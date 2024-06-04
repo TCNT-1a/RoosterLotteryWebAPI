@@ -11,13 +11,13 @@ namespace RoosterLotteryWebAPI.Controllers.RequestModel
         //[PhoneNumber]
         //public string PhoneNumber { get; set; }
 
-        //[Required(ErrorMessage = "Full name is required")]
+        [Required(ErrorMessage = "Full name is required")]
         public string? FullName { get; set; }
 
-        //[Required(ErrorMessage = "Date of birth is required")]
+        [Required(ErrorMessage = "Date of birth is required")]
         public DateTime DateOfBirth { get; set; }
 
-        //[Required(ErrorMessage = "Phone number is required")]
+        [Required(ErrorMessage = "Phone number is required")]
         //[Phone(ErrorMessage = "Invalid phone number format")]
         [PhoneNumber]
         public string? PhoneNumber { get; set; }
