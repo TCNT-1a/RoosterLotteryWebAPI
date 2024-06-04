@@ -3,6 +3,10 @@ using RoosterLotteryWebAPI.Batch;
 using Service.Models;
 using Quartz;
 using RoosterLotteryWebAPI.Exception;
+//using Microsoft.AspNetCore.Builder;
+//using static System.Net.Mime.MediaTypeNames;
+using Microsoft.AspNetCore.Diagnostics;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +26,12 @@ if (connectionString == null)
     throw new InvalidOperationException("DbConnection connection string is missing");
 }
 
-builder.Services.AddControllers();
+//builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    
+     
+});
 
 builder.Services.AddDbContext<RoosterLotteryContext>((options) => options.UseSqlServer(connectionString));
 builder.Services.AddQuartz(q =>
@@ -53,7 +62,7 @@ string baseAddress = $"http://{Host}:{Port}";
 builder.WebHost.UseUrls(baseAddress);
 
 var app = builder.Build();
-
+app.UseRouting();
 using (var scope = app.Services.CreateScope())
 {
     var schedulerFactory = scope.ServiceProvider.GetRequiredService<ISchedulerFactory>();
@@ -61,16 +70,30 @@ using (var scope = app.Services.CreateScope())
     scheduler.Start().Wait();
 }
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseExceptionHandler(errorApp =>
+{
+    errorApp.Run(async context =>
+    {
+        context.Response.StatusCode = 500;
+        context.Response.ContentType = "application/json";
+
+        var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
+        if (contextFeature != null)
+        {
+            await context.Response.WriteAsync(JsonConvert.SerializeObject(new { error = contextFeature.Error.Message }));
+        }
+    });
+});
+
 
 app.UseAuthorization();
 app.UseMiddleware<ExceptionMiddleware>();
-
 app.MapControllers();
+
 
 app.Run();
