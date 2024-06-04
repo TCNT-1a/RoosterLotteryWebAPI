@@ -32,25 +32,16 @@ namespace Server.Controllers
         [ServiceFilter(typeof(ValidateModelAttribute))]
         public IActionResult CreatePlayer([FromBody] CreatePlayer p)
         {
-            if (ModelState.IsValid)
-            {
-                var fullNameParas = new SqlParameter("@FullName", p.FullName);
-                var dateOfBirthParas = new SqlParameter("@DateOfBirth", p.DateOfBirth);
-                var phoneParas = new SqlParameter("@PhoneNumber", p.PhoneNumber);
-                var c = _context.Database
-                   .ExecuteSqlRaw("EXEC dbo.CreatePlayer @FullName, @DateOfBirth, @PhoneNumber"
-                   , fullNameParas, dateOfBirthParas, phoneParas);
-                return ResponseModel(c);
-            }
-            else
-            {
-                var errors = string.Join("; ", ModelState.Values
-                    .SelectMany(x => x.Errors)
-                    .Select(x => x.ErrorMessage));
-                throw new ArgumentException(errors);
-            }
+            var fullNameParas = new SqlParameter("@FullName", p.FullName);
+            var dateOfBirthParas = new SqlParameter("@DateOfBirth", p.DateOfBirth);
+            var phoneParas = new SqlParameter("@PhoneNumber", p.PhoneNumber);
+            var c = _context.Database
+               .ExecuteSqlRaw("EXEC dbo.CreatePlayer @FullName, @DateOfBirth, @PhoneNumber"
+               , fullNameParas, dateOfBirthParas, phoneParas);
+            return ResponseModel(c);
         }
         [HttpPost("bet")]
+        [ServiceFilter(typeof(ValidateModelAttribute))]
         public IActionResult Bet([FromBody] CreatePlayerBet b)
         {
             var playerId = new SqlParameter("@PlayerID", b.UserId);

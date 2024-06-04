@@ -204,3 +204,4 @@ C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\RoosterLotteryWebAPI\obj\De
 C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\RoosterLotteryWebAPI\obj\Debug\net6.0\RoosterLotteryWebAPI.genruntimeconfig.cache
 C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\RoosterLotteryWebAPI\obj\Debug\net6.0\ref\RoosterLotteryWebAPI.dll
 C:\Users\n\Documents\cty vacxin\RoosterLotteryWebAPI\RoosterLotteryWebAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\n\Documents\hansae\RoosterLotteryWebAPI\RoosterLotteryWebAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
