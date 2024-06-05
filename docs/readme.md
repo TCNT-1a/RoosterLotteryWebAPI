@@ -57,21 +57,23 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 
 ![alt](create-player.png)
 
-- Nhập vào sđt 1000000016
+- Nhập vào sđt 1000000016 - (Lưu ý cần nhập đúng định dạng số điện thoại)
+- Nhập vào họ và tên
+- Nhập vào ngày sinh
 - Lúc này chức năng tạo user kích hoạt
 - Nhập vào các thông tin user: họ và tên, ngày sinh, sau đó bấm Tạo
 
-![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.010.png)
+![alt](create-player1.png)
 
 - Lúc này bạn có thể cược, khi bạn cược, bạn có thể xem con số mà các player khác cược chung ván với bạn
 
 - Nhập vào 1 con số và bấm cược
 
-![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.011.png)
+![alt](cuoc-thanhcong.png)
 
 - Bấm tìm để xem các player khác
 
-![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.012.png)
+![alt](tim-player.png)
 
 - Cột **betID** đại diện cho ván
 
@@ -116,7 +118,7 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 
 - PLAYER
 
-![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.018.png)
+![alt](player1.png)
 
 - BET
 
@@ -151,4 +153,3 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 # Phần 5 Một số bug (nếu còn thời gian sẻ sửa)
 
 - Khi nhập số âm trong khi player cược thì bị set về 0
-
