@@ -101,7 +101,7 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 
 ### Các Procedure còn lại được sử dụng để xữ lý nghiệp vụ ở API SERVER
 
-![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.016.png)
+![alt](api.png)
 
 ### Các API theo thứ tự từ trên xuống dưới có công dụng:
 
@@ -151,4 +151,4 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 # Phần 5 Một số bug (nếu còn thời gian sẻ sửa)
 
 - Khi nhập số âm trong khi player cược thì bị set về 0
-- Chưa validate regex số điện thoại
+
