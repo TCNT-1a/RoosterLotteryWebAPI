@@ -1,6 +1,6 @@
-/**/Debug.*
-/**/debug.*
-**/Debug.*
-**/debug.*
 /.vs/*
-
+/RoosterLotteryWebAPI/bin/*
+/RoosterLotteryWebAPI/obj/*
+/Service/bin
+/Service/obj
+/RoosterLotteryWebAPI/obj

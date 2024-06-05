@@ -1,16 +1,21 @@
 ﻿# Phần 1: Cài đặt môi trường
+
 ## 1 Tải source code
+
 ```shell
  git clone https://github.com/TCNTrading-lab/RoosterLottery.git
 ```
+
 ```shell
  git clone https://github.com/TCNTrading-lab/RoosterLotteryWebAPI.git
 ```
-## 2 Tạo cơ sở dữ liệu 
+
+## 2 Tạo cơ sở dữ liệu
+
 - Vào Project: RoosterLotteryWebAPI
 - Tạo cơ sở dữ liệu
 - Phục hồi lại với tên là RoosterLottery
-![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.001.png)
+  ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.001.png)
 
 ## 3 Cấu hình backend
 
@@ -21,28 +26,28 @@
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.003.png)
 
-
-
 ## 4 Khởi động Backend
 
 - Vào địa chỉ này xem danh sách API: <http://localhost:5000/swagger/index.html>
 
-## 5 Mở project RoosterLottery 
-- Config tại client cho biết địa chỉ API 
-- Port Sever 
+## 5 Mở project RoosterLottery
+
+- Config tại client cho biết địa chỉ API
+- Port Sever
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.005.png)
+
 - Sau đó khởi động phía **Project**
+
 # Phần 2: Hướng dẫn sử dụng
+
 ## 1 Player đã có tồn tại trong CSDL
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.006.png)
 
-Nhập vào một số điện thoại có tồn tại (0123->0135)
+Nhập vào một số điện thoại có tồn tại (1000000001->1000000015)
 
-![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.007.png)
-
-![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.008.png)
+![alt](player.png)
 
 Bạn có thể nhập vào số từ 0 đến 9 và bấm cược, app đã có validate giá trị cược từ 0 đến 9, nếu nhập số ngoài khoảng này thì app thông báo không cho cược.
 
@@ -50,9 +55,9 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 
 ## 2 Player không có trong CSDL
 
-![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.009.png)
+![alt](create-player.png)
 
-- Nhập vào sđt 0136789011
+- Nhập vào sđt 1000000016
 - Lúc này chức năng tạo user kích hoạt
 - Nhập vào các thông tin user: họ và tên, ngày sinh, sau đó bấm Tạo
 
@@ -108,6 +113,7 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 ### Về phần table để dùng để lưu trử thông tin
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.017.png)
+
 - PLAYER
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.018.png)
@@ -143,5 +149,6 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 - Winrate: % người chơi trúng thưởng. % người thua
 
 # Phần 5 Một số bug (nếu còn thời gian sẻ sửa)
+
 - Khi nhập số âm trong khi player cược thì bị set về 0
 
