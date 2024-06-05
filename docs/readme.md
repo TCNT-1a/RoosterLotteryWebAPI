@@ -52,7 +52,7 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 
 ![alt](Aspose.Words.76af8797-d44a-41eb-b6e8-2c545a2c5a82.009.png)
 
-- Nhập vào sđt 0136
+- Nhập vào sđt 0136789011
 - Lúc này chức năng tạo user kích hoạt
 - Nhập vào các thông tin user: họ và tên, ngày sinh, sau đó bấm Tạo
 
@@ -144,5 +144,4 @@ Trong ván cược kéo dài 1 giờ, thì chỉ có thể cược 1 lần, sau 
 
 # Phần 5 Một số bug (nếu còn thời gian sẻ sửa)
 - Khi nhập số âm trong khi player cược thì bị set về 0
-- Chưa validate regex số điện thoại
 
