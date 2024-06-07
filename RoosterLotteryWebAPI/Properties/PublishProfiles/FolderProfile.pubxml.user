@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\n\Documents\cty-vacxin\RoosterLotteryWebAPI\RoosterLotteryWebAPI\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2024-06-07T03:13:11.3783675Z;True|2024-06-06T17:55:07.4794329+07:00;True|2024-06-06T17:26:11.9950406+07:00;True|2024-06-06T17:02:43.5634636+07:00;True|2024-06-06T16:31:55.3886988+07:00;True|2024-06-06T16:06:20.5543858+07:00;True|2024-06-06T15:50:18.9856127+07:00;True|2024-06-06T15:45:03.8377752+07:00;True|2024-06-06T15:01:06.4565108+07:00;True|2024-06-06T08:12:16.0472207+07:00;True|2024-06-05T17:32:56.0875467+07:00;True|2024-06-05T17:28:52.2796872+07:00;True|2024-06-05T17:13:57.8833474+07:00;True|2024-06-05T17:11:33.8571897+07:00;True|2024-06-05T17:07:08.6031909+07:00;True|2024-06-05T17:04:26.7826123+07:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

@@ -17,6 +17,12 @@ namespace Server.Controllers
         {
             this._context = context;
         }
+        [HttpGet("hello")]
+        public string hello()
+        {
+            return "hello";
+        }
+
         [HttpPost("find")]
 
         public List<Player> FindPlayerByPhoneNumber([FromBody] SearchPlayer s)
@@ -55,6 +61,7 @@ namespace Server.Controllers
         [HttpGet("get-board-bets")]
         public List<BoardBet> GetBoardBets([FromQuery] int playerId)
         {
+
             var pId = new SqlParameter("@PlayerID", playerId);
             var p = _context.BoardBets
                 .FromSqlRaw("EXEC dbo.GetPlayerBets @PlayerID"

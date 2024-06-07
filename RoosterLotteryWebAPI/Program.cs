@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Newtonsoft.Json;
 using RoosterLotteryWebAPI.Filter;
 using Microsoft.AspNetCore.Mvc;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,12 +18,13 @@ var builder = WebApplication.CreateBuilder(args);
 var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 IConfigurationRoot configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: false)
-    .AddJsonFile($"appsettings.{env}.json", optional: false)
+    .AddJsonFile($"appsettings.{env}.json", optional: true)
     .Build();
 
 builder.Services.AddSingleton<IConfigurationRoot>(configuration);
 
 string connectionString = configuration.GetConnectionString("DbConnection") ?? "";
+
 if (connectionString == null)
 {
     throw new InvalidOperationException("DbConnection connection string is missing");
@@ -34,11 +36,14 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 builder.Services.AddControllers();
 builder.Services.AddScoped<ValidateModelAttribute>();
 
+//builder.Services.AddDbContext<RoosterLotteryContext>(options =>
+//    options.UseSqlServer(connectionString,
+//        sqlServerOptions => sqlServerOptions.EnableRetryOnFailure()));
+//
 builder.Services.AddDbContext<RoosterLotteryContext>((options) => options.UseSqlServer(connectionString));
 builder.Services.AddQuartz(q =>
 {
     q.UseMicrosoftDependencyInjectionJobFactory();
-
     var CRON = new
     {
         //Repeat every at begin hour
@@ -60,7 +65,7 @@ builder.Services.AddSwaggerGen();
 string Host = configuration.GetValue("Host","localhost");
 string Port = configuration.GetValue("Port","5000");
 string baseAddress = $"http://{Host}:{Port}";
-builder.WebHost.UseUrls(baseAddress);
+//builder.WebHost.UseUrls(baseAddress);
 
 var app = builder.Build();
 app.UseMiddleware<ExceptionMiddleware>();
@@ -72,12 +77,13 @@ using (var scope = app.Services.CreateScope())
     scheduler.Start().Wait();
 }
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseAuthorization();
 app.MapControllers();
